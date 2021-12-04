@@ -2,8 +2,8 @@
   <div class="home">
 
     <div class="flex justify-center md:justify-end">
-      <button class="text-primary">Log In</button>
-      <button class="text-primary ml-2">Sign Up</button>
+      <button class="btn transition duration-200 text-primary border-primary md:border-2 hover:bg-primary hover:text-white">Log In</button>
+      <button class="btn transition duration-200 text-primary ml-2 border-primary md:border-2 hover:bg-primary hover:text-white">Sign Up</button>
     </div>
 
     <header>
@@ -29,12 +29,21 @@
 
       <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">Most Popular</h4>
 
-      <div class="mt-8">
+      <div class="mt-8 grid sm:gap-10 sm:grid-cols-3 mb-16">
         <!-- card go here -->
+        <Card
+          v-for="card in cards"
+          :key="card.id"
+          :title="card.title"
+          :content="card.content"
+          :src="card.src"
+          :alt="card.alt"
+          :time="card.time"
+        />
       </div>
 
       <div class="flex justify-center">
-        <div class="bg-secondary-100 text-secondary-200">Load more</div>
+        <div class="btn bg-secondary-100 text-secondary-200 hover:shadow-inner">Load more</div>
       </div>
     </div>
   </div>
@@ -75,7 +84,7 @@ export default {
           alt: "curry", 
           time: "49 mins"
         },
-      ]
+      ],
     }
   }
 }

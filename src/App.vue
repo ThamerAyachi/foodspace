@@ -1,8 +1,8 @@
 <template>
   <!-- content wrapper -->
-  <div class="flex justify-between">
-    <Navbar class="hidden lg:block w-80"/>
-    <main class="md:px-16 px-3 py-16 bg-gray-100 w-full">
+  <div class="lg:flex relative">
+    <Navbar />
+    <main class="md:px-16 px-3 py-10 bg-gray-100 w-full">
       <router-view/>
     </main>
   </div>
